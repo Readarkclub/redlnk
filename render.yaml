@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: redink
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+    disk:
+      name: redink-data
+      mountPath: /app/data
+      sizeGB: 1
+    healthCheckPath: /api/health
