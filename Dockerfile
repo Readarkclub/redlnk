@@ -54,17 +54,15 @@ COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 # 创建数据目录
 RUN mkdir -p output history
 
-# 设置环境变量
+# 设置环境变量（PORT 由 Railway 自动设置）
 ENV FLASK_DEBUG=False
 ENV FLASK_HOST=0.0.0.0
-ENV FLASK_PORT=12398
 
-# 暴露端口
-EXPOSE 12398
+# 暴露端口（默认 12398，Railway 会覆盖）
+EXPOSE ${PORT:-12398}
 
-# 健康检查
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:12398/api/health')" || exit 1
+# 移除 Docker 健康检查（Railway 有自己的健康检查机制）
+# 如果保留会与 Railway 冲突
 
 # 启动命令
 CMD ["uv", "run", "python", "-m", "backend.app"]
