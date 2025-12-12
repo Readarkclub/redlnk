@@ -330,7 +330,7 @@ class ImageService:
                     "data": {
                         "index": index,
                         "status": "done",
-                        "image_url": f"/api/images/{task_id}/{filename}",
+                        "image_url": f"/redink-api/images/{task_id}/{filename}",
                         "phase": "cover"
                     }
                 }
@@ -412,7 +412,7 @@ class ImageService:
                                     "data": {
                                         "index": index,
                                         "status": "done",
-                                        "image_url": f"/api/images/{task_id}/{filename}",
+                                        "image_url": f"/redink-api/images/{task_id}/{filename}",
                                         "phase": "content"
                                     }
                                 }
@@ -492,7 +492,7 @@ class ImageService:
                             "data": {
                                 "index": index,
                                 "status": "done",
-                                "image_url": f"/api/images/{task_id}/{filename}",
+                                "image_url": f"/redink-api/images/{task_id}/{filename}",
                                 "phase": "content"
                             }
                         }
@@ -592,7 +592,7 @@ class ImageService:
             return {
                 "success": True,
                 "index": index,
-                "image_url": f"/api/images/{task_id}/{filename}"
+                "image_url": f"/redink-api/images/{task_id}/{filename}"
             }
         else:
             return {
@@ -670,7 +670,7 @@ class ImageService:
                             "data": {
                                 "index": index,
                                 "status": "done",
-                                "image_url": f"/api/images/{task_id}/{filename}"
+                                "image_url": f"/redink-api/images/{task_id}/{filename}"
                             }
                         }
                     else:

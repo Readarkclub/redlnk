@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': {
+      '/redink-api': {
         target: 'http://localhost:12398',
         changeOrigin: true
       }

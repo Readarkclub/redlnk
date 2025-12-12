@@ -5,7 +5,7 @@
     <div class="card-cover" @click="$emit('preview', record.id)">
       <img
         v-if="record.thumbnail && record.task_id"
-        :src="`/api/images/${record.task_id}/${record.thumbnail}`"
+        :src="`/redink-api/images/${record.task_id}/${record.thumbnail}`"
         alt="cover"
         loading="lazy"
         decoding="async"

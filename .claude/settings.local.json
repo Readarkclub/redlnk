@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 添加 Railway/Render 部署配置和文档\n\n- 添加 CLAUDE.md: Claude Code 开发指南\n- 添加 DEPLOY.md: 完整部署文档（Railway/Render）\n- 添加 railway.json: Railway 部署配置\n- 添加 render.yaml: Render 部署配置\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfix: 修复 Railway 部署端口问题\n\n- 修改 config.py 支持 PORT 环境变量（Railway 自动设置）\n- 移除 Dockerfile 中的硬编码端口和健康检查\n- 更新 railway.json 移除自定义健康检查配置\n\n🤖 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+    ]
+  }
+}

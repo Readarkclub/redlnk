@@ -56,7 +56,7 @@ def create_app():
     app.config.from_object(Config)
 
     CORS(app, resources={
-        r"/api/*": {
+        r"/redink-api/*": {
             "origins": Config.CORS_ORIGINS,
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type"],
@@ -86,10 +86,10 @@ def create_app():
                 "message": "红墨 AI图文生成器 API",
                 "version": "0.1.0",
                 "endpoints": {
-                    "health": "/api/health",
-                    "outline": "POST /api/outline",
-                    "generate": "POST /api/generate",
-                    "images": "GET /api/images/<filename>"
+                    "health": "/redink-api/health",
+                    "outline": "POST /redink-api/outline",
+                    "generate": "POST /redink-api/generate",
+                    "images": "GET /redink-api/images/<filename>"
                 }
             }
 

@@ -28,7 +28,7 @@ def create_api_blueprint():
     from .config_routes import create_config_blueprint
 
     # 创建主 API 蓝图
-    api_bp = Blueprint('api', __name__, url_prefix='/api')
+    api_bp = Blueprint('api', __name__, url_prefix='/redink-api')
 
     # 将子蓝图注册到主蓝图（不带额外前缀）
     api_bp.register_blueprint(create_outline_blueprint())

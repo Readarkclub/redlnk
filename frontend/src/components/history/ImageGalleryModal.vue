@@ -66,7 +66,7 @@
             :class="{ 'regenerating': regeneratingImages.has(idx) }"
           >
             <img
-              :src="`/api/images/${record.images.task_id}/${img}`"
+              :src="`/redink-api/images/${record.images.task_id}/${img}`"
               loading="lazy"
               decoding="async"
             />
