@@ -9,7 +9,8 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_USERNAME: lwh-js@163.com
+  # Docker 镜像命名不支持 '@'，这里必须是 Docker Hub 的 Docker ID（用户名），不是邮箱
+  DOCKER_USERNAME: readarkclub
   IMAGE_NAME: redink
 
 jobs:
