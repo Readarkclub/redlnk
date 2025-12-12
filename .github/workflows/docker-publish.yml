@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_USERNAME: histonemax
+  DOCKER_USERNAME: lwh-js@163.com
   IMAGE_NAME: redink
 
 jobs:
