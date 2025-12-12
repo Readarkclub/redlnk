@@ -269,8 +269,12 @@ export const useGeneratorStore = defineStore('generator', {
       this.taskId = null
       this.recordId = null
       this.userImages = []
-      // 清除 localStorage
-      localStorage.removeItem(STORAGE_KEY)
+      // 清除 localStorage（某些内嵌浏览器/隐私模式下可能会禁用 storage）
+      try {
+        localStorage.removeItem(STORAGE_KEY)
+      } catch (e) {
+        console.error('清除状态失败:', e)
+      }
     },
 
     // 保存当前状态

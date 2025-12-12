@@ -112,7 +112,12 @@ async function handleGenerate() {
       error.value = result.error || '生成大纲失败'
     }
   } catch (err: any) {
-    error.value = err.message || '网络错误，请重试'
+    const backendError =
+      err?.response?.data?.error ||
+      err?.response?.data?.message ||
+      (typeof err?.response?.data === 'string' ? err.response.data : '')
+
+    error.value = backendError || err?.message || '网络错误，请重试'
   } finally {
     loading.value = false
   }
